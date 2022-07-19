@@ -48,8 +48,8 @@ DROP TABLE IF EXISTS `meli_internet`.`planos` ;
 CREATE TABLE IF NOT EXISTS `meli_internet`.`planos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `velocidade_mb` INT NOT NULL,
-  `preco` DECIMAL(4,2) NOT NULL,
-  `desconto` DECIMAL(4,2) NOT NULL,
+  `preco` DECIMAL(10,2) NOT NULL,
+  `desconto` DECIMAL(4,2) NOT NULL DEFAULT 00.00,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -64,6 +64,14 @@ INSERT INTO `meli_internet`.`planos` (`id`, `velocidade_mb`, `preco`, `desconto`
 INSERT INTO `meli_internet`.`planos` (`id`, `velocidade_mb`, `preco`, `desconto`) VALUES (3, 300, 195.00, DEFAULT);
 INSERT INTO `meli_internet`.`planos` (`id`, `velocidade_mb`, `preco`, `desconto`) VALUES (4, 150, 119.90, 20.00);
 INSERT INTO `meli_internet`.`planos` (`id`, `velocidade_mb`, `preco`, `desconto`) VALUES (5, 200, 175.00, 35.00);
+
+
+-- -----------------------------------------------------
+-- Data for table `meli_internet`.`cliente`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `meli_internet`;
+INSERT INTO `cliente` VALUES (1, "Wonder", "Woman", "1987-02-19", "SP", "São Paulo", 3);
 
 COMMIT;
 
